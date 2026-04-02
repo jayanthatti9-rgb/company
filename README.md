@@ -1,0 +1,17 @@
+name: Artifact Demo
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir temp
+          echo "alpha" > temp/alpha.html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: files
+          path: temp/
+```
